@@ -53,12 +53,12 @@ their names alphabetically and print each name on a new line.
 def print_max_score_solution_1(students):
     list_scores = list([score[1] for score in students])
     sorted(list_scores)
-    max_score = float(min(list_scores))
+    max_score = float(list_scores[0])
 
-    while max_score == float(min(list_scores)):
-        list_scores.remove(float(min(list_scores)))
+    while max_score == float(list_scores[0]):
+        list_scores.remove(float(list_scores[0]))
 
-    print('\n'.join(sorted(list(score[0] for score in students if score[1] == float(min(list_scores))))))
+    print('\n'.join(sorted(list(score[0] for score in students if score[1] == float(list_scores[0])))))
 
 def print_max_score_solution_2(students):
     second_highest_score = sorted(list(set([score for name, score in students])))[1]
