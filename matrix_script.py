@@ -19,7 +19,6 @@ def format_and_print_string(input, list_inputs):
     a, b = [], ""
 
     for z in zip(*list_inputs):
-        print(z)
         b += "".join(z)
 
     print(re.sub(r"(?<=\w)([^\w]+)(?=\w)", " ", b))
