@@ -47,10 +47,8 @@ def print_winner(string):
             Kevin += len(string) - i
         else:
             Stuart += len(string) - i
-    if Kevin > Stuart:
-        print("Kevin {0}".format(str(Kevin)))
-    else:
-        print("Stuart {0}".format(Stuart))
+    print("Kevin {0}".format(str(Kevin))) if Kevin > Stuart else print("Stuart {0}".format(Stuart))
+
 
 if __name__ == "__main__":
     print_winner("BANANA")
