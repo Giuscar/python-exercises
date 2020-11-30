@@ -23,7 +23,7 @@ For the input :
 
 The output should be:
 1 1 2 1 0 0 0 0 0 0
-"""
+"""""
 
 def scan_tree(key, linked_agents_dict):
     if key in linked_agents_dict:
