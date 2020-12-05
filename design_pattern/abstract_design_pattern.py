@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class AbstractOperation(ABC):
     def __init__(self, valueA, valueB):
         self.valueA = valueA
