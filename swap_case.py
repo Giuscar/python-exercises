@@ -8,8 +8,11 @@ A single line containing a string S.
 Constraints:
 Print the modified string S.
 """
+
+
 def swap_the_string(string_to_swap):
     print(''.join([c.lower() if c.isupper() else c.upper() for c in string_to_swap]))
+
 
 if __name__ == "__main__":
     string_to_swap = "I am A sOftware Engineer"
