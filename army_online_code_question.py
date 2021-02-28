@@ -20,6 +20,7 @@ Write an efficient algorithm for the following assumptions:
 - Each element of array ranks is an integer within the range [0...1000000000]
 """
 
+
 def soldier_can_report(A):
     hash_A = set(A)
     total_soldier = 0
