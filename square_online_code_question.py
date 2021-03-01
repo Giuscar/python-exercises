@@ -1,3 +1,15 @@
+""""
+A rectangular map consisting of N rows and M columns of square areas is given. Each area is painted with a certain color.
+Two areas on the map belong to the same country if the following conditions are met:
+- They have the same color
+- It is possible to travel from one area to the other by moving only north, south, west or east without moving over
+areas of a different color
+
+The map can be described by a zero-indexed matrix consisting of N wors and M columns of integers. The color of each area
+is described by the corresponding element of the matrix. Two areas have the same color if an only if their corresponding
+matrix elements have the same value. 
+"""
+
 def find_neighbours(A, B, val, x, y, ):
     if x < 0 or x > len(A) - 1:
         return
