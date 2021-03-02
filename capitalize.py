@@ -24,9 +24,11 @@ Sample Output
 Chris Alan
 """
 
+
 def solve(s):
     a_string = s.split(' ')
     return ' '.join((word.capitalize() for word in a_string))
+
 
 if __name__ == "__main__":
     print(solve("chris alan"))
