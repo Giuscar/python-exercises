@@ -38,17 +38,19 @@ Sample Output:
 Stuart 12
 """
 
-def print_winner(string):
+def get_winner(string):
     vowels = ['A', 'E', 'I', 'O', 'U']
     Kevin = 0
     Stuart = 0
-    for i in range(len(string)):
+
+    for i in range(0, len(string)):
         if string[i] in vowels:
             Kevin += len(string) - i
         else:
             Stuart += len(string) - i
-    print("Kevin {0}".format(str(Kevin))) if Kevin > Stuart else print("Stuart {0}".format(Stuart))
 
+    return ("Stuart", Stuart) if Stuart > Kevin else ("Kevin", Kevin)
 
 if __name__ == "__main__":
-    print_winner("BANANA")
+    winner = get_winner("BANANA")
+    print("{0} {1}".format(*winner))
