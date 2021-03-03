@@ -65,7 +65,16 @@ def print_max_score_solution_2(students):
     print('\n'.join(sorted([name for name, score in students if score == second_highest_score])))
 
 
+def print_max_score_solution_3(students):
+    students = sorted(students, key=lambda f: f[1], reverse=True)
+    max_score = students[0][1]
+    [students.remove(student) for student in students if max_score == student[1]]
+
+    print("{0} {1}".format(students[0][0], students[1][0]))
+
+
 if __name__ == "__main__":
     students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
     #print_max_score_solution_1(students)
-    print_max_score_solution_2(students)
+    #print_max_score_solution_2(students)
+    print_max_score_solution_3(students)

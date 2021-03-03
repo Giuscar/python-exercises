@@ -38,6 +38,7 @@ Sample Output:
 Stuart 12
 """
 
+
 def get_winner(string):
     vowels = ['A', 'E', 'I', 'O', 'U']
     Kevin = 0
@@ -50,6 +51,7 @@ def get_winner(string):
             Stuart += len(string) - i
 
     return ("Stuart", Stuart) if Stuart > Kevin else ("Kevin", Kevin)
+
 
 if __name__ == "__main__":
     winner = get_winner("BANANA")
