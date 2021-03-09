@@ -10,7 +10,8 @@ is described by the corresponding element of the matrix. Two areas have the same
 matrix elements have the same value. 
 """
 
-def find_neighbours(A, B, val, x, y, ):
+
+def find_neighbours(A, B, val, x, y):
     if x < 0 or x > len(A) - 1:
         return
     if y < 0 or y > len(A[0]) - 1:
@@ -31,7 +32,7 @@ def find_neighbours(A, B, val, x, y, ):
 def calculateNumberOfCountries(A):
 
     sum = 0
-    B = [[True for x in A[0]] for y in A]
+    B = [[True for x in y] for y in A]
 
     for x in range(0, len(A)):
         for y in range(0, len(A[x])):
