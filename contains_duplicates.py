@@ -36,7 +36,7 @@ def contains_duplicates_solution_1(nums: List[int]) -> bool:
     return False
 
 
-def contains_duplicates_solution_2(nums):
+def contains_duplicates_solution_2(nums: List[int]) -> bool:
     s = set()
 
     for i in range(0, len(nums)):
@@ -55,6 +55,7 @@ def contains_duplicates_solution_3(nums: List[int]) -> bool:
             return True
 
     return False
+
 
 if __name__ == "__main__":
     nums = [1, 2, 3, 5, 10, 4, 10]
