@@ -46,5 +46,15 @@ def max_number_of_balloons(text: str) -> int:
     return occ
 
 
+def maxNumberOfBalloons(self, text: str) -> int:
+    d = dict(b=0, a=0, l=0, o=0, n=0)
+    for char in text:
+        if char in d:
+            d[char] +=1
+            d['l'] = d['l'] // 2
+            d['o'] = d['o'] // 2
+    return min(d.values())
+
+
 if __name__ == "__main__":
     print(max_number_of_balloons("loonbalxballpoon"))
