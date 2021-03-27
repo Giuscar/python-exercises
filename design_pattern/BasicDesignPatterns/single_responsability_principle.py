@@ -52,7 +52,7 @@ if __name__ == "__main__":
     j.add_entry('I had a bug')
     print(f'Journal entries:\n{j}')
 
-    file = r'C:\Users\gcare\python-exercises\journal.txt'
+    file = r'/journal.txt'
     PersistenceManager.save_to_file(j, file)
     with open(file) as fh:
         print(fh.read())
