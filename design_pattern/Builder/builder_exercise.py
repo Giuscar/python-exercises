@@ -7,7 +7,7 @@ class Field:
         self.name = name
 
     def __str__(self):
-        return 'self.%s = %s' % (self.name, self.value)
+        return '%s = %s' % (self.name, self.value)
 
 
 class Class:
