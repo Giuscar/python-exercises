@@ -42,7 +42,7 @@ def repeatedNTimesSolution2(A: List[int]) -> int:
         if count[k] > 1:
             return k
 
-        
+
 if __name__ == "__main__":
     print(repeatedNTimesSolution1([1, 2, 3, 3]))
     print(repeatedNTimesSolution2([1, 2, 3, 3]))
