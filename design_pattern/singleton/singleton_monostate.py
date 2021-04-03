@@ -3,6 +3,7 @@ You keep all the data in a static variable and when you create a new object you 
 This is not he best approach.
 """
 
+
 class CEO:
     __shared_state = {
         'name': 'Steve',
