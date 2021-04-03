@@ -1,0 +1,8 @@
+New York
+1750000
+Tokyo
+3500000
+Shanghai
+24000000
+Beijing
+32000000
