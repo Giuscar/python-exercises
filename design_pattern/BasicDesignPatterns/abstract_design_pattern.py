@@ -12,17 +12,21 @@ class AbstractOperation(ABC):
         print('This is the main class')
         pass
 
+
 class SumOperation(AbstractOperation):
     def executeOperation(self):
         return self.valueA + self.valueB
+
 
 class DiffOperation(AbstractOperation):
     def executeOperation(self):
         return self.valueA - self.valueB
 
+
 class mainClass:
     def do_something(self):
         print('Main class')
+
 
 class derClass(mainClass):
     def do_something(self):

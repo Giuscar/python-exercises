@@ -49,8 +49,8 @@ class Square(Rectangle):
 
 def use_it(rc):
     w = rc.width
-    # It doesn't work for the square usecase, because assigning value 10 to the heigh, you are assigning value 10 to the
-    # width as well.
+    # It doesn't work for the square use case, because assigning value 10 to the height, you are assigning value 10 to
+    # the width as well.
     rc.height = 10
     expected = int(w*10)
     print(f'Expected an area of {expected}, got {rc.area}')
