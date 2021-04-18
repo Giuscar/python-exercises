@@ -45,7 +45,7 @@ class ProductFilter:
 
 #Here is the right solution
 #Let's define first the specification pattern: it's a class determing whether or not a particular item satisfies a
-# particular criteria
+#particular criteria
 
 
 class Specification:
