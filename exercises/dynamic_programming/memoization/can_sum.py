@@ -29,4 +29,3 @@ if __name__ == '__main__':
     print(can_sum(7, [5, 3, 4, 7], {}))
     print(can_sum(7, [2, 4], {}))
     print(can_sum(8, [2, 3, 5], {}))
-    print(can_sum(300, [7, 14], {}))
