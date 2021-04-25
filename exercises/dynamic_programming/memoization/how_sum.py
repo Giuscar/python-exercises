@@ -4,7 +4,6 @@ function should return an array containing any combination of elements that add 
 no combination that adds up to the targetSum, then return null. If there are multiple combinations possible, you may
 return any single one.
 """
-import numpy as np
 
 
 def how_sum(target_number: int, numbers: [], memo: {}) -> []:
