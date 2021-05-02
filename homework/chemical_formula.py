@@ -48,9 +48,10 @@ def increase_number(res: {}, number: int, element: str) -> {}:
 def calculate_chemical_formula(chemical_formula: str) -> {}:
 
     element = ""
-    count = ""
     res = {}
     new_index = -1
+    parenthesis = {']': '[', ')': '(', '}': '{'}
+
     for idx in range(len(chemical_formula)):
         if chemical_formula[idx].isupper():
             if element != "":
@@ -66,13 +67,61 @@ def calculate_chemical_formula(chemical_formula: str) -> {}:
             number, new_index = create_number(idx, chemical_formula)
             increase_number(res, int(number), element)
             element = ""
+        elif chemical_formula[idx] in parenthesis.keys() or chemical_formula[idx] in parenthesis.values():
+            continue
 
     return res
 
 
+def retrieve_value(parenthesis_beg: str, index: int, chemical_formula: str) -> int:
+    parenthesis = {'[': ']', '(': ')', '{': '}'}
+    final_index = -1
+
+    for idx in range(index, len(chemical_formula)):
+        if idx > final_index:
+            if chemical_formula[idx] == parenthesis[parenthesis_beg]:
+                final_index = idx
+                break
+                # if idx + 1 < len(chemical_formula) and chemical_formula[idx+1].isdigit():
+                #     _, final_index = create_number(idx+1, chemical_formula)
+                #     break
+                # else:
+                #     final_index = idx
+                #     break
+
+    return final_index
+
+
+def update_res(res: {}, tmp_res: {}) -> {}:
+
+    for key, value in tmp_res.items():
+        if res.get(key):
+            res[key] += value
+        else:
+            res[key] = value
+    return res
+
+
 if __name__ == "__main__":
-    chemical_formula = 'C6N4H14O2N3'
-    res = calculate_chemical_formula(chemical_formula)
+    chemical_formula = '(Mg2H3)2'
+    parenthesis = {']': '[', ')': '(', '}': '{'}
+
+    # res = calculate_chemical_formula(chemical_formula)
+
+    element = ""
+    new_index = -1
+    final_idx = -1
+    res = {}
+    tmp_res = {}
+    for idx in range(len(chemical_formula)):
+        if idx > final_idx:
+            if chemical_formula[idx] in parenthesis.values():
+                final_idx = retrieve_value(chemical_formula[idx], idx, chemical_formula)
+                tmp_res = calculate_chemical_formula(chemical_formula[idx:final_idx])
+            elif chemical_formula[idx].isdigit():
+                for key, value in tmp_res.items():
+                    tmp_res[key] *= int(chemical_formula[idx])
+                update_res(res, tmp_res)
 
     for key, value in res.items():
         print(key + ': ' + str(value))
