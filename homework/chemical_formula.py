@@ -36,36 +36,43 @@ def create_number(index: int, chemical_formula: str):
     return ''.join(res), index
 
 
+def increase_number(res: {}, number: int, element: str) -> {}:
+    if res.get(element):
+        res[element] += int(number)
+    else:
+        res[element] = int(number)
+
+    return res
+
 
 def calculate_chemical_formula(chemical_formula: str) -> {}:
-    stack = []
-    parenthesis = {']': '[', ')': '(', '}': '{'}
+
+    element = ""
+    count = ""
     res = {}
     new_index = -1
-
-    for word in chemical_formula:
-        if word.isalpha():
-            res[word] = 1
-
-    for index in range(len(chemical_formula)):
-        if chemical_formula[index].isdigit() and index > new_index:
-            word, new_index = create_number(index, chemical_formula)
-            stack.append(word)
-        elif chemical_formula[index].isupper() or chemical_formula[index] in parenthesis.values():
-            new_index = -1
-            if index + 1 < len(chemical_formula) and chemical_formula[index+1].islower():
-                stack.append(chemical_formula[index]+chemical_formula[index+1])
-            else:
-                stack.append(chemical_formula[index])
-
-
+    for idx in range(len(chemical_formula)):
+        if chemical_formula[idx].isupper():
+            if element != "":
+                increase_number(res, 1, element)
+            element = chemical_formula[idx]
+            if idx + 1 >= len(chemical_formula):
+                increase_number(res, 1, element)
+        elif chemical_formula[idx].islower():
+            element += chemical_formula[idx]
+            if idx + 1 >= len(chemical_formula):
+                increase_number(res, 1, element)
+        elif chemical_formula[idx].isdigit() and idx > new_index:
+            number, new_index = create_number(idx, chemical_formula)
+            increase_number(res, int(number), element)
+            element = ""
 
     return res
 
 
 if __name__ == "__main__":
-    chemical_formula = 'Mg{FO[(AB)2(OH)4]2}5'
+    chemical_formula = 'C6N4H14O2N3'
     res = calculate_chemical_formula(chemical_formula)
 
-    # for key, value in res.items():
-    #     print(key + ': ' + str(value))
+    for key, value in res.items():
+        print(key + ': ' + str(value))
