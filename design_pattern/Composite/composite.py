@@ -1,5 +1,12 @@
 """
 The goal of composite design pattern is to treat individual and aggregate objects uniformly.
+
+What you need to do with composite:
+- Objects can use other objects via inheritance/composition.
+- Some composed and singular objects need similar/identical behaviors.
+- Composite design pattern lets us treat both types of objects uniformily.
+- Python supports iteration with __iter__ the Iterable ABC.
+- A single object can make itself iterable by yielding self from __iter__.
 """
 
 
