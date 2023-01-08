@@ -26,8 +26,7 @@ Chris Alan
 
 
 def solve(s):
-    a_string = s.split(' ')
-    return ' '.join((word.capitalize() for word in a_string))
+    return " ".join((word.capitalize() for word in s.split(" ")))
 
 
 if __name__ == "__main__":
