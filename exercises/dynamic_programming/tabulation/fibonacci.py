@@ -8,6 +8,9 @@ def calculate_fibonacci_series(n: int) -> int:
     if n < 0:
         raise ValueError(str(n) + ' ' + 'should be a positive value')
 
+    if n == 0:
+        return 0
+
     tab = np.zeros(n+1)
     tab[1] = int(1)
 
