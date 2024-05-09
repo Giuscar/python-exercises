@@ -21,17 +21,11 @@ Write an efficient algorithm for the following assumptions:
 """
 
 
-def soldier_can_report(A):
-    hash_A = set(A)
-    total_soldier = 0
-
-    for val in A:
-        if val + 1 in hash_A:
-            total_soldier += 1
-
-    return total_soldier
+def number_of_soldiers_can_report(soldiers: []) -> int:
+    filtered_soldiers = set(soldiers)
+    return sum(1 for soldier in soldiers if soldier + 1 in filtered_soldiers)
 
 
 if __name__ == "__main__":
-    A = [3, 4, 3, 0, 2, 2, 3, 0, 0]
-    print(soldier_can_report(A))
+    soldiers = [3, 4, 3, 0, 0, 2, 3, 0, 0]
+    print(f"The number of soldiers reporting is {number_of_soldiers_can_report(soldiers)}")
