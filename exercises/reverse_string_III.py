@@ -23,7 +23,7 @@ All the words in s are separated by a single space.
 
 
 def reversed_string(s: str) -> str:
-    return ' '.join([word[::-1] for word in s.split(' ')])
+    return " ".join([word[::-1] for word in s.split(" ")])
 
 
 if __name__ == "__main__":

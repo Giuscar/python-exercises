@@ -10,14 +10,14 @@ def calculate_permutation(s1, s2):
         return False
 
     for val in s1:
-        idx_value = ord(val) - ord('a')
+        idx_value = ord(val) - ord("a")
         if checker.get(idx_value):
             checker[idx_value] = checker.get(idx_value) + 1
         else:
             checker[idx_value] = 1
 
     for val in s2:
-        idx_value = ord(val) - ord('a')
+        idx_value = ord(val) - ord("a")
         if checker.get(idx_value) and checker[idx_value] > 0:
             checker[idx_value] = checker.get(idx_value) - 1
         else:

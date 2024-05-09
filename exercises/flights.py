@@ -49,10 +49,6 @@ def calculate_max_flights_on_air(list_of_flights):
 
 
 if __name__ == "__main__":
-    print("The max value is {0}".format(
-        calculate_max_flights_on_air([(1, 3), (2, 8), (3, 4), (5, 6), (9, 10)]))
-    )
+    print("The max value is {0}".format(calculate_max_flights_on_air([(1, 3), (2, 8), (3, 4), (5, 6), (9, 10)])))
 
-    print("The max value is {0}".format(
-        calculate_max_flights_on_air([(4, 8), (2, 5), (17, 20), (10, 21), (9, 18)]))
-    )
+    print("The max value is {0}".format(calculate_max_flights_on_air([(4, 8), (2, 5), (17, 20), (10, 21), (9, 18)])))

@@ -50,6 +50,8 @@ python students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti'
 The lowest grade of 37.2 belongs to Tina. The second lowest grade of 37.21 belongs to both Harry and Berry, so we order
 their names alphabetically and print each name on a new line.
 """
+
+
 def print_max_score_solution_1(students):
     list_scores = list([score[1] for score in students])
     sorted(list_scores)
@@ -58,11 +60,12 @@ def print_max_score_solution_1(students):
     while max_score == float(list_scores[0]):
         list_scores.remove(float(list_scores[0]))
 
-    print('\n'.join(sorted(list(score[0] for score in students if score[1] == float(list_scores[0])))))
+    print("\n".join(sorted(list(score[0] for score in students if score[1] == float(list_scores[0])))))
+
 
 def print_max_score_solution_2(students):
     second_highest_score = sorted(list(set([score for name, score in students])))[1]
-    print('\n'.join(sorted([name for name, score in students if score == second_highest_score])))
+    print("\n".join(sorted([name for name, score in students if score == second_highest_score])))
 
 
 def print_max_score_solution_3(students):
@@ -74,7 +77,7 @@ def print_max_score_solution_3(students):
 
 
 if __name__ == "__main__":
-    students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
-    #print_max_score_solution_1(students)
-    #print_max_score_solution_2(students)
+    students = [["Harry", 37.21], ["Berry", 37.21], ["Tina", 37.2], ["Akriti", 41], ["Harsh", 39]]
+    # print_max_score_solution_1(students)
+    # print_max_score_solution_2(students)
     print_max_score_solution_3(students)

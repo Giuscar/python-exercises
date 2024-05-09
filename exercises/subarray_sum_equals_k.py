@@ -1,4 +1,5 @@
 from itertools import accumulate
+
 """"
 Given an array of integers nums and an integer k, return the total number of continuous subarrays whose sum equals to k.
 
@@ -19,11 +20,11 @@ Constraints:
 
 
 def subarraySum(nums, k):
-    sum_freq = {0:1}
+    sum_freq = {0: 1}
     count = 0
 
     for num in accumulate(nums):
-        count += sum_freq.get(num-k, 0)
+        count += sum_freq.get(num - k, 0)
         sum_freq[count] = sum_freq.get(num, 0) + 1
 
     return count

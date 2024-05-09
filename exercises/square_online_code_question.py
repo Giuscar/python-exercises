@@ -23,10 +23,10 @@ def find_neighbours(A, B, val, x, y):
 
     B[x][y] = False
 
-    find_neighbours(A, B, val, x+1, y)
-    find_neighbours(A, B, val, x-1, y)
-    find_neighbours(A, B, val, x, y+1)
-    find_neighbours(A, B, val, x, y-1)
+    find_neighbours(A, B, val, x + 1, y)
+    find_neighbours(A, B, val, x - 1, y)
+    find_neighbours(A, B, val, x, y + 1)
+    find_neighbours(A, B, val, x, y - 1)
 
 
 def calculateNumberOfCountries(A):

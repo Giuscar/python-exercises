@@ -29,11 +29,11 @@ Only one valid answer exists.
 def execute_two_sums_quadratic_solution(array, target):
 
     for i in range(0, len(array)):
-        if i - 1 > 0 and array[i-1] == array[i]:
+        if i - 1 > 0 and array[i - 1] == array[i]:
             continue
-        for j in range(i+1, len(array)):
+        for j in range(i + 1, len(array)):
             if array[i] + array[j] == target:
-                return [i+1, j+j]
+                return [i + 1, j + j]
 
     return []
 
@@ -45,7 +45,7 @@ def execute_two_sums_linear_solution(array, target):
     while l < r:
         s = array[l] + array[r]
         if s == target:
-            return [l+1, r+1]
+            return [l + 1, r + 1]
         elif s > target:
             r -= 1
         elif s < target:

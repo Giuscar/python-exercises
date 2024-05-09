@@ -39,6 +39,7 @@ alphabet.
 
 Note: The string S has at least 3 distinct characters.
 """
+
 from itertools import groupby
 
 

@@ -33,8 +33,9 @@ def climbing_stairs_solution_1(stairs_remaining, saved_results):
     if saved_results.get(stairs_remaining) and stairs_remaining == saved_results[stairs_remaining]:
         return saved_results[stairs_remaining]
 
-    saved_results[stairs_remaining] = climbing_stairs_solution_1(stairs_remaining - 1, saved_results) +\
-                                      climbing_stairs_solution_1(stairs_remaining - 2, saved_results)
+    saved_results[stairs_remaining] = climbing_stairs_solution_1(
+        stairs_remaining - 1, saved_results
+    ) + climbing_stairs_solution_1(stairs_remaining - 2, saved_results)
     return saved_results[stairs_remaining]
 
 
@@ -42,12 +43,12 @@ def climbing_stairs_solution_2(stairs_remaining):
     if stairs_remaining == 1:
         return 1
 
-    results = [0]*(stairs_remaining+1)
+    results = [0] * (stairs_remaining + 1)
     results[1] = 1
     results[2] = 2
 
-    for i in range(3, stairs_remaining+1):
-        results[i] = results[i-1] + results[i-2]
+    for i in range(3, stairs_remaining + 1):
+        results[i] = results[i - 1] + results[i - 2]
 
     return results[stairs_remaining]
 

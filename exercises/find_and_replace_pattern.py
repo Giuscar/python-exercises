@@ -62,4 +62,4 @@ def find_and_replace_pattern(words: List[str], pattern: str) -> Iterator[str]:
 
 
 if __name__ == "__main__":
-    print('\n'.join(find_and_replace_pattern(["abc", "deq", "mee", "aqq", "dkd", "ccc"], "abb")))
+    print("\n".join(find_and_replace_pattern(["abc", "deq", "mee", "aqq", "dkd", "ccc"], "abb")))

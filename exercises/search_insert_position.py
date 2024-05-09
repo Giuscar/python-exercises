@@ -42,17 +42,17 @@ def binarySearch(nums, p, r, target):
     if target > nums[r]:
         return r + 1
 
-    q = (p+r)//2
+    q = (p + r) // 2
 
     if nums[q] == target:
         return q
     elif nums[q] > target:
-        return binarySearch(nums, p, q-1, target)
+        return binarySearch(nums, p, q - 1, target)
     else:
-        return binarySearch(nums, q+1, r, target)
+        return binarySearch(nums, q + 1, r, target)
 
 
 if __name__ == "__main__":
     target = 5
     nums = [1, 3, 5, 6]
-    print(str(binarySearch(nums, 0, len(nums)-1, target)))
+    print(str(binarySearch(nums, 0, len(nums) - 1, target)))

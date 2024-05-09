@@ -21,6 +21,7 @@ Constraints:
 1 <= nums.length <= 10^5
 -10^9 <= nums[i] <= 10^9
 """
+
 from typing import List
 
 
@@ -29,7 +30,7 @@ def contains_duplicates_solution_1(nums: List[int]) -> bool:
     index = 0
 
     while len(s) > 1:
-        if s[index] == s[index+1]:
+        if s[index] == s[index + 1]:
             return True
         s.pop(0)
 
@@ -50,8 +51,8 @@ def contains_duplicates_solution_2(nums: List[int]) -> bool:
 def contains_duplicates_solution_3(nums: List[int]) -> bool:
     s = sorted(nums)
 
-    for i in range(0, len(s)-1):
-        if s[i] == s[i+1]:
+    for i in range(0, len(s) - 1):
+        if s[i] == s[i + 1]:
             return True
 
     return False

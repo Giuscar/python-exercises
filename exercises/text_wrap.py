@@ -30,7 +30,7 @@ YZ
 
 
 def split_string(width, string):
-    return "\n".join([string[i:i + width] for i in range(0, len(string), width)])
+    return "\n".join([string[i : i + width] for i in range(0, len(string), width)])
 
 
 if __name__ == "__main__":

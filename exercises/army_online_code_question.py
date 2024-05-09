@@ -26,7 +26,7 @@ def soldier_can_report(A):
     total_soldier = 0
 
     for val in A:
-        if val+1 in hash_A:
+        if val + 1 in hash_A:
             total_soldier += 1
 
     return total_soldier

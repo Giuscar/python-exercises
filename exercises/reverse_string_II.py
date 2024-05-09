@@ -22,8 +22,8 @@ s consists of only lowercase English letters.
 
 def reversed_string(s: int, k: int) -> str:
     a = list(s)
-    for i in range(0, len(a), 2*k):
-        a[i:i+k] = reversed(s[i:i+k])
+    for i in range(0, len(a), 2 * k):
+        a[i : i + k] = reversed(s[i : i + k])
 
     return "".join(a)
 

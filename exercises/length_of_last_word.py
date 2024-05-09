@@ -26,7 +26,7 @@ def lengthOfLastWord(self, s: str) -> int:
 
     # removes the non-char at the beginning and at the end of the string
     s = s.strip()
-    words = s.split(' ')
+    words = s.split(" ")
 
     if len(words[len(words) - 1]) > 0:
         return len(words[len(words) - 1])

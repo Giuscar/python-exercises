@@ -39,6 +39,7 @@ Constraints:
 1 <= cardPoints[i] <= 10^4
 1 <= k <= cardPoints.length
 """
+
 from typing import List
 
 

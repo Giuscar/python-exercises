@@ -29,7 +29,7 @@ def recursive_sub_set_solution_1(nums):
         outputs += [curr + [num] for curr in outputs]
 
     return outputs
-    #[print(' '.join(list(map(str, output)))) for output in outputs]
+    # [print(' '.join(list(map(str, output)))) for output in outputs]
 
 
 def recursive_sub_set_solution_2(nums):
@@ -56,4 +56,3 @@ if __name__ == "__main__":
     nums = [1, 2, 3]
     print(recursive_sub_set_solution_1(nums))
     print(recursive_sub_set_solution_2(nums))
-

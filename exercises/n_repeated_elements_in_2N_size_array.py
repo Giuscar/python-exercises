@@ -25,15 +25,15 @@ Note:
 0 <= A[i] < 10000
 A.length is even
 """
+
 import collections
 from itertools import groupby
 from typing import List
 
 
 def repeatedNTimesSolution1(A: List[int]) -> int:
-    N = len(A)//2
-    return [int(k) for k, v in groupby(sorted(A))
-            if len(list(v)) == N][0]
+    N = len(A) // 2
+    return [int(k) for k, v in groupby(sorted(A)) if len(list(v)) == N][0]
 
 
 def repeatedNTimesSolution2(A: List[int]) -> int:

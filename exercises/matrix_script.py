@@ -12,10 +12,12 @@ ir!
 Output
 This is Matrix#  %!
 """
+
 import re
 
+
 def format_and_print_string(input, list_inputs):
-    n, m = map(int, input.split(' '))
+    n, m = map(int, input.split(" "))
     a, b = [], ""
 
     for z in zip(*list_inputs):

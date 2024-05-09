@@ -6,21 +6,21 @@ the array. You may use element the array as many times as needed. You may assume
 
 
 def can_sum(target_number: int, numbers: []) -> bool:
-    array_values = [False]*(target_number+1)
+    array_values = [False] * (target_number + 1)
     array_values[0] = True
 
     for idx in range(target_number):
         if array_values[idx] is True:
             for number in numbers:
-                if idx+number < len(array_values):
-                    array_values[idx+number] = True
+                if idx + number < len(array_values):
+                    array_values[idx + number] = True
                     if idx + number == target_number:
                         return True
 
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(can_sum(7, [2, 3]))
     print(can_sum(7, [5, 3, 4, 7]))
     print(can_sum(7, [2, 4]))

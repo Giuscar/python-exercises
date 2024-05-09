@@ -40,14 +40,13 @@ Hence, the total happiness is 2 - 1 = 1.
 
 
 def calculate_happyness(N_M, array_str, A_str, B_str):
-    n, m = map(int, N_M.split(' '))
-    array = list(map(int, array_str.split(' ')))
-    A = set(map(int, A_str.split(' ')))
-    B = set(map(int, B_str.split(' ')))
+    n, m = map(int, N_M.split(" "))
+    array = list(map(int, array_str.split(" ")))
+    A = set(map(int, A_str.split(" ")))
+    B = set(map(int, B_str.split(" ")))
 
     return sum([(i in A) - (i in B) for i in array])
 
 
 if __name__ == "__main__":
     print("{}".format(calculate_happyness("3 2", "1 5 3", "3 1", "5 7")))
-

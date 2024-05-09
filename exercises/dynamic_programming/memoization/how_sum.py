@@ -29,7 +29,7 @@ def how_sum(target_number: int, numbers: [], memo: {}) -> []:
     return None
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(how_sum(7, [2, 3], {}))
     print(how_sum(7, [5, 3, 4, 7], {}))
     print(how_sum(7, [2, 4], {}))

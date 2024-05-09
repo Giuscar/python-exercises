@@ -24,7 +24,7 @@ def can_sum(target_number: int, numbers: [], memo: {}) -> bool:
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(can_sum(7, [2, 3], {}))
     print(can_sum(7, [5, 3, 4, 7], {}))
     print(can_sum(7, [2, 4], {}))

@@ -40,7 +40,7 @@ Stuart 12
 
 
 def get_winner(string):
-    vowels = ['A', 'E', 'I', 'O', 'U']
+    vowels = ["A", "E", "I", "O", "U"]
     Kevin = 0
     Stuart = 0
 

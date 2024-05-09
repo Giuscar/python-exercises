@@ -25,6 +25,7 @@ First, the character 1 occurs only once. It is replaced by (1, 1). Then the char
 replaced by (3,2) and so on.
 Also, note the single space within each compression and between the compressions.
 """
+
 from itertools import groupby
 
 

@@ -17,7 +17,7 @@ Output: [0,3]
 
 def execute_solution(target: int, nums: []):
     if not nums:
-        print('The input is invalid')
+        print("The input is invalid")
     else:
         dict_nums = {}
         for idx, value in enumerate(nums):
@@ -28,9 +28,9 @@ def execute_solution(target: int, nums: []):
                 return idx, dict_nums[target - nums[idx]]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = 9
     nums = [2, 7, 11, 15]
     x, y = execute_solution(n, nums)
 
-    print('The idx having sum {0} are ({1}, {2})'.format(str(n), str(x), str(y)))
+    print("The idx having sum {0} are ({1}, {2})".format(str(n), str(x), str(y)))

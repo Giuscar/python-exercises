@@ -17,6 +17,7 @@ Output: 0
 Constraints:
 0 <= n <= 5 * 106
 """
+
 from math import sqrt
 
 
@@ -57,6 +58,6 @@ def count_primes_solution_2(n: int) -> int:
     return sum(res)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(count_primes_solution_1(4999))
     print(count_primes_solution_2(4999))

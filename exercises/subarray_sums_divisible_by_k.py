@@ -1,4 +1,5 @@
 from typing import List
+
 """"
 Given an array A of integers, return the number of (contiguous, non-empty) subarrays that have a sum divisible by K.
 
@@ -17,7 +18,7 @@ Note:
 
 def subarraysDivByK(A: List[int], K: int) -> int:
     total = 0
-    counts = [0]*K
+    counts = [0] * K
 
     for val in A:
         total += val % K
@@ -26,7 +27,7 @@ def subarraysDivByK(A: List[int], K: int) -> int:
     num_sub_arrays_div_by_k = counts[0]
 
     for count in counts:
-        num_sub_arrays_div_by_k += (count*(count-1))//2
+        num_sub_arrays_div_by_k += (count * (count - 1)) // 2
 
     return num_sub_arrays_div_by_k
 

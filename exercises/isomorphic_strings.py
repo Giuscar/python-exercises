@@ -46,8 +46,7 @@ def is_isomorphic(s: str, t: str) -> bool:
 
         map_letters[s[i]] = t[i]
 
-    return t == ''.join([map_letters.get(s[v]) for v in range(0, len_s)
-                         if map_letters.get(s[v]) is not None])
+    return t == "".join([map_letters.get(s[v]) for v in range(0, len_s) if map_letters.get(s[v]) is not None])
 
 
 if __name__ == "__main__":
