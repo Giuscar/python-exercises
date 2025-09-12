@@ -25,103 +25,72 @@ Send us your work in an archive, in private gist file(s) or using an other priva
 Make it ready for production ;)
 """
 
+"""
+- Loop from the end of the string
+- if str[i] is Number and i-1 > 0 and str[i-1] is letter: 
+    dict[str[i-1]] += str[i]
+- if str[i] is Number and i-1 > 0 and str[i-1] in ["]", ")"]
+    recursive_call until str[i] in ["(", "["]    
+"""
+import re
 
-def create_number(index: int, chemical_formula: str):
-    numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-    res = []
-    while index < len(chemical_formula) and chemical_formula[index] in numbers:
-        res.append(chemical_formula[index])
-        index += 1
-
-    return ''.join(res), index
-
-
-def increase_number(res: {}, number: int, element: str) -> {}:
-    if res.get(element):
-        res[element] += int(number)
-    else:
-        res[element] = int(number)
-
-    return res
-
-
-def calculate_chemical_formula(chemical_formula: str) -> {}:
-
-    element = ""
-    res = {}
-    new_index = -1
-    parenthesis = {']': '[', ')': '(', '}': '{'}
-
-    for idx in range(len(chemical_formula)):
-        if chemical_formula[idx].isupper():
-            if element != "":
-                increase_number(res, 1, element)
-            element = chemical_formula[idx]
-            if idx + 1 >= len(chemical_formula):
-                increase_number(res, 1, element)
-        elif chemical_formula[idx].islower():
-            element += chemical_formula[idx]
-            if idx + 1 >= len(chemical_formula):
-                increase_number(res, 1, element)
-        elif chemical_formula[idx].isdigit() and idx > new_index:
-            number, new_index = create_number(idx, chemical_formula)
-            increase_number(res, int(number), element)
-            element = ""
-        elif chemical_formula[idx] in parenthesis.keys() or chemical_formula[idx] in parenthesis.values():
-            continue
-
-    return res
+atoms = {
+    "a": 0,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "e": 0,
+    "f": 0,
+    "g": 0,
+    "h": 0,
+    "i": 0,
+    "j": 0,
+    "k": 0,
+    "l": 0,
+    "m": 0,
+    "n": 0,
+    "o": 0,
+    "p": 0,
+    "q": 0,
+    "r": 0,
+    "s": 0,
+    "t": 0,
+    "u": 0,
+    "v": 0,
+    "w": 0,
+    "x": 0,
+    "y": 0,
+    "z": 0,
+}
 
 
-def retrieve_value(parenthesis_beg: str, index: int, chemical_formula: str) -> int:
-    parenthesis = {'[': ']', '(': ')', '{': '}'}
-    final_index = -1
+def retrieve_number_of_atoms(formula: str, start_index, end_index):
+    index = start_index
+    print(f"{formula[start_index:end_index]}")
+    while index < end_index:
+        print(f"Formula index is {formula[index]}")
+        if formula[index].isalpha():
+            if index + 1 < end_index and formula[index + 1].isdigit():
+                atoms[formula[index].lower()] += int(formula[index+1])
+                index += 2
+            else:
+                atoms[formula[index].lower()] += 1
+                index += 1
+        elif formula[index] == "[":
+            index_final = next((i for i in range(index, end_index) if formula[i] == "]"), None)
+            if index_final:
+                retrieve_number_of_atoms(formula, index+1, index_final)
+            index += index_final+1
+        elif formula[index] == "(":
+            index_final = next((i for i in range(index, end_index) if formula[i] == ")"), None)
+            if index_final:
+                retrieve_number_of_atoms(formula, index + 1, index_final)
+            index += index_final+1
 
-    for idx in range(index, len(chemical_formula)):
-        if idx > final_index:
-            if chemical_formula[idx] == parenthesis[parenthesis_beg]:
-                final_index = idx
-                break
-                # if idx + 1 < len(chemical_formula) and chemical_formula[idx+1].isdigit():
-                #     _, final_index = create_number(idx+1, chemical_formula)
-                #     break
-                # else:
-                #     final_index = idx
-                #     break
-
-    return final_index
-
-
-def update_res(res: {}, tmp_res: {}) -> {}:
-
-    for key, value in tmp_res.items():
-        if res.get(key):
-            res[key] += value
-        else:
-            res[key] = value
-    return res
-
+    return atoms
 
 if __name__ == "__main__":
-    chemical_formula = '(Mg2H3)2'
-    parenthesis = {']': '[', ')': '(', '}': '{'}
-
-    # res = calculate_chemical_formula(chemical_formula)
-
-    element = ""
-    new_index = -1
-    final_idx = -1
-    res = {}
-    tmp_res = {}
-    for idx in range(len(chemical_formula)):
-        if idx > final_idx:
-            if chemical_formula[idx] in parenthesis.values():
-                final_idx = retrieve_value(chemical_formula[idx], idx, chemical_formula)
-                tmp_res = calculate_chemical_formula(chemical_formula[idx:final_idx])
-            elif chemical_formula[idx].isdigit():
-                for key, value in tmp_res.items():
-                    tmp_res[key] *= int(chemical_formula[idx])
-                update_res(res, tmp_res)
-
-    for key, value in res.items():
-        print(key + ': ' + str(value))
+    formula = "K4ONSO3[(O3)(S2)]"
+    atoms_result = retrieve_number_of_atoms(formula, 0, len(formula))
+    result = ",".join([f"{k.upper()}={v}" for k, v in atoms_result.items() if v >= 1])
+    print(f"Number of atoms are {result}")
